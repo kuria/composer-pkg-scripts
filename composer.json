@@ -1,0 +1,28 @@
+{
+    "name": "kuria/composer-pkg-scripts",
+    "type": "composer-plugin",
+    "description": "Composer plugin that provides a way for packages to expose scripts to the root project",
+    "keywords": ["composer", "package", "scripts", "script"],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1",
+        "composer-plugin-api": "^1.0"
+    },
+    "require-dev": {
+        "composer/composer": "^1.6",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kuria\\ComposerPkgScripts\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kuria\\ComposerPkgScripts\\": "tests"
+        }
+    },
+    "extra": {
+        "class": "Kuria\\ComposerPkgScripts\\Plugin"
+    }
+}
