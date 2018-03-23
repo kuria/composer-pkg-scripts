@@ -51,7 +51,7 @@ class ScriptCompiler
         $this->compiledPackageVariables = null;
     }
 
-    public function setShellArgEscaper(callable $shellArgEscaper): void
+    function setShellArgEscaper(callable $shellArgEscaper): void
     {
         $this->shellArgEscaper = $shellArgEscaper;
     }
