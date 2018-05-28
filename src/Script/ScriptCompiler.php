@@ -8,7 +8,7 @@ use Kuria\ComposerPkgScripts\Exception\InvalidScriptVariableException;
 class ScriptCompiler
 {
     private const VARIABLE_PLACEHOLDER_REGEXP = '{\{\$([^\}]++)\}}';
-    private const DIRECT_VARIABLE_REFERENCE_REGEXP = '{^\{\$([^\}]++)\}$}';
+    private const DIRECT_VARIABLE_REFERENCE_REGEXP = '{\{\$([^\}]++)\}$}AD';
 
     /** @var array */
     private $globalVariables = [];
