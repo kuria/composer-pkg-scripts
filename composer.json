@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": ">=7.1",
+        "ext-json": "*",
         "composer-plugin-api": "^1.0"
     },
     "require-dev": {
