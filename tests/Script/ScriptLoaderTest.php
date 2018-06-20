@@ -10,8 +10,8 @@ class ScriptLoaderTest extends TestCase
 {
     function testShouldLoadScriptsAndVariables()
     {
-        /** @var RootPackageInterface $rootPackage */
-        $rootPackage = $this->createConfiguredMock(PackageInterface::class, [
+        /** @var RootPackageInterface $rootPackageMock */
+        $rootPackageMock = $this->createConfiguredMock(PackageInterface::class, [
             'getExtra' => [
                 ScriptLoader::EXTRA_SCRIPTS_VARIABLES_KEYS => [
                     'acme/complex' => [
@@ -21,13 +21,13 @@ class ScriptLoaderTest extends TestCase
             ],
         ]);
 
-        /** @var PackageInterface[] $packages */
-        $packages = [
+        /** @var PackageInterface[] $packageMocks */
+        $packageMocks = [
             $this->createConfiguredMock(PackageInterface::class, [
                 'getName' => 'acme/empty',
                 'getExtra' => [],
             ]),
-            $basicPackage = $this->createConfiguredMock(PackageInterface::class, [
+            $basicPackageMock = $this->createConfiguredMock(PackageInterface::class, [
                 'getName' => 'acme/basic',
                 'getExtra' => [
                     ScriptLoader::EXTRA_SCRIPTS_KEY => [
@@ -36,7 +36,7 @@ class ScriptLoaderTest extends TestCase
                     ],
                 ],
             ]),
-            $complexPackage = $this->createConfiguredMock(PackageInterface::class, [
+            $complexPackageMock = $this->createConfiguredMock(PackageInterface::class, [
                 'getName' => 'acme/complex',
                 'getExtra' => [
                     ScriptLoader::EXTRA_SCRIPTS_KEY => [
@@ -110,8 +110,8 @@ class ScriptLoaderTest extends TestCase
 
         $loader = new ScriptLoader();
 
-        $scripts = $loader->loadScripts($packages);
-        $variables = $loader->loadScriptVariables($rootPackage, $packages);
+        $scripts = $loader->loadScripts($packageMocks);
+        $variables = $loader->loadScriptVariables($rootPackageMock, $packageMocks);
 
         $this->assertSame($expectedScripts, array_map(function ($script) { return (array) $script; }, $scripts));
         $this->assertSame($expectedVariables, $variables);
