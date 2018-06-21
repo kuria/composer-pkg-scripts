@@ -17,6 +17,7 @@ class Plugin implements PluginInterface, Capable, EventSubscriberInterface
 {
     /** @var Composer */
     private $composer;
+
     /** @var ScriptManager */
     private $scriptManager;
 

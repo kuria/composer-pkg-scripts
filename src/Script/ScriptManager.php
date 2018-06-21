@@ -9,12 +9,16 @@ class ScriptManager
 {
     /** @var Composer */
     private $composer;
+
     /** @var ScriptLoader */
     private $loader;
+
     /** @var ScriptCompiler */
     private $compiler;
+
     /** @var Script[] */
     private $registeredScripts = [];
+
     /** @var Script[] */
     private $loadedScripts;
 

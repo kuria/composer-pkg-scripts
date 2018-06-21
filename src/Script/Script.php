@@ -6,14 +6,19 @@ class Script
 {
     /** @var string */
     public $package;
+
     /** @var string */
     public $shortName;
+
     /** @var string */
     public $name;
+
     /** @var string[] */
     public $aliases;
+
     /** @var mixed */
     public $definition;
+
     /** @var string */
     public $help;
 

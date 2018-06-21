@@ -12,10 +12,13 @@ class ScriptCompiler
 
     /** @var array */
     private $globalVariables = [];
+
     /** @var array */
     private $packageVariables = [];
+
     /** @var array|null */
     private $compiledPackageVariables;
+
     /** @var callable */
     private $shellArgEscaper = 'escapeshellarg';
 
