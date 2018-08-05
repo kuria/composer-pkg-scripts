@@ -1,14 +1,27 @@
 language: php
 
-php:
-    - '7.1'
-    - '7.2'
-    - nightly
+matrix:
+    include:
+        - name: 7.1 (tests)
+          php: '7.1'
+          env:
+              - INSTALL_COMMAND="composer install"
 
-env:
-    - COMPOSER_COMMAND="composer install"
-    - COMPOSER_COMMAND="composer update --prefer-lowest --prefer-stable"
+        - name: 7.2 (tests)
+          php: '7.2'
+          env:
+              - INSTALL_COMMAND="composer install"
 
-install: ${COMPOSER_COMMAND}
+        - name: 7.2 (tests, lowest deps)
+          php: '7.2'
+          env:
+              - INSTALL_COMMAND="composer update --prefer-lowest --prefer-stable"
+
+        - name: nightly (tests)
+          php: nightly
+          env:
+              - INSTALL_COMMAND="composer install"
+
+install: ${INSTALL_COMMAND}
 
 script: ./vendor/bin/phpunit --colors
