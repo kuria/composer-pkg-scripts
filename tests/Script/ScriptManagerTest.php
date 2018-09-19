@@ -5,13 +5,12 @@ namespace Kuria\ComposerPkgScripts\Script;
 use Composer\Composer;
 use Composer\Config;
 use Composer\Package\CompletePackage;
-use Composer\Package\PackageInterface;
 use Composer\Package\RootPackageInterface;
 use Composer\Repository\RepositoryManager;
 use Composer\Repository\WritableRepositoryInterface;
-use PHPUnit\Framework\TestCase;
+use Kuria\DevMeta\Test;
 
-class ScriptManagerTest extends TestCase
+class ScriptManagerTest extends Test
 {
     function testShouldRegisterScripts()
     {

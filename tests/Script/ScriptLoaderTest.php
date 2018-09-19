@@ -4,9 +4,9 @@ namespace Kuria\ComposerPkgScripts\Script;
 
 use Composer\Package\PackageInterface;
 use Composer\Package\RootPackageInterface;
-use PHPUnit\Framework\TestCase;
+use Kuria\DevMeta\Test;
 
-class ScriptLoaderTest extends TestCase
+class ScriptLoaderTest extends Test
 {
     function testShouldLoadScriptsAndVariables()
     {

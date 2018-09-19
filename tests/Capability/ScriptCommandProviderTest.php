@@ -3,16 +3,15 @@
 namespace Kuria\ComposerPkgScripts\Capability;
 
 use Composer\Command\ScriptAliasCommand;
-use Composer\Package\PackageInterface;
 use Kuria\ComposerPkgScripts\Command\DumpPackageScriptsCommand;
 use Kuria\ComposerPkgScripts\Command\ListPackageScriptsCommand;
 use Kuria\ComposerPkgScripts\Plugin;
 use Kuria\ComposerPkgScripts\Script\Script;
 use Kuria\ComposerPkgScripts\Script\ScriptManager;
-use PHPUnit\Framework\TestCase;
+use Kuria\DevMeta\Test;
 use Symfony\Component\Console\Command\Command;
 
-class ScriptCommandProviderTest extends TestCase
+class ScriptCommandProviderTest extends Test
 {
     function testShouldGetCommands()
     {

@@ -2,9 +2,9 @@
 
 namespace Kuria\ComposerPkgScripts\Script;
 
-use PHPUnit\Framework\TestCase;
+use Kuria\DevMeta\Test;
 
-class ScriptTest extends TestCase
+class ScriptTest extends Test
 {
     function testShouldCreateScript()
     {

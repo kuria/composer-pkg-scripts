@@ -11,7 +11,7 @@
     },
     "require-dev": {
         "composer/composer": "^1.6",
-        "phpunit/phpunit": "^7.2.5"
+        "kuria/dev-meta": "^0.5"
     },
     "autoload": {
         "psr-4": {
@@ -25,5 +25,14 @@
     },
     "extra": {
         "class": "Kuria\\ComposerPkgScripts\\Plugin"
+    },
+    "scripts": {
+        "all": ["@cs", "@tests"],
+        "tests": "phpunit --colors=always",
+        "cs": [
+            "phpcs '--standard=./vendor/kuria/dev-meta/src/CodeSniffer/ruleset.xml' -p -s --colors src tests",
+            "phpstan analyze --ansi --configuration=./vendor/kuria/dev-meta/conf/phpstan-src.neon src",
+            "phpstan analyze --ansi --configuration=./vendor/kuria/dev-meta/conf/phpstan-tests.neon tests"
+        ]
     }
 }

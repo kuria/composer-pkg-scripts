@@ -3,9 +3,9 @@
 namespace Kuria\ComposerPkgScripts\Script;
 
 use Kuria\ComposerPkgScripts\Exception\ScriptCompilerException;
-use PHPUnit\Framework\TestCase;
+use Kuria\DevMeta\Test;
 
-class ScriptCompilerTest extends TestCase
+class ScriptCompilerTest extends Test
 {
     /** @var ScriptCompiler */
     private $compiler;

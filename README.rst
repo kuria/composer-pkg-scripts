@@ -5,8 +5,8 @@ Composer plugin that provides a way for packages to expose custom scripts
 to the root project. These scripts work similarly to the root-only
 scripts_ option.
 
-.. image:: https://travis-ci.org/kuria/composer-pkg-scripts.svg?branch=master
-   :target: https://travis-ci.org/kuria/composer-pkg-scripts
+.. image:: https://travis-ci.com/kuria/composer-pkg-scripts.svg?branch=master
+   :target: https://travis-ci.com/kuria/composer-pkg-scripts
 
 .. contents::
    :depth: 2

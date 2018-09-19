@@ -1,27 +1,40 @@
 language: php
 
+env:
+    global:
+        - COMPOSER_ROOT_VERSION=1.99.99
+
 matrix:
     include:
         - name: 7.1 (tests)
           php: '7.1'
           env:
               - INSTALL_COMMAND="composer install"
+              - MAIN_COMMAND="composer tests"
 
-        - name: 7.2 (tests)
+        - name: 7.2 (all)
           php: '7.2'
           env:
               - INSTALL_COMMAND="composer install"
+              - MAIN_COMMAND="composer all"
 
         - name: 7.2 (tests, lowest deps)
           php: '7.2'
           env:
               - INSTALL_COMMAND="composer update --prefer-lowest --prefer-stable"
+              - MAIN_COMMAND="composer tests"
 
         - name: nightly (tests)
           php: nightly
           env:
               - INSTALL_COMMAND="composer install"
+              - MAIN_COMMAND="composer tests"
+
+    allow_failures:
+        - php: nightly
+
+    fast_finish: true
 
 install: ${INSTALL_COMMAND}
 
-script: ./vendor/bin/phpunit --colors
+script: ${MAIN_COMMAND}
