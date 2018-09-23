@@ -47,7 +47,7 @@ class ScriptCompilerTest extends Test
         $this->assertSame($expectedResult, $this->compiler->compile($script));
     }
 
-    function provideScripts(): array
+    function provideScripts()
     {
         return [
             // script, globalVariables, packageVariables, expectedResult
@@ -185,7 +185,7 @@ class ScriptCompilerTest extends Test
         $this->compiler->compile($script);
     }
 
-    function provideScriptsWithInvalidVariables(): array
+    function provideScriptsWithInvalidVariables()
     {
         return [
             // script, globalVariables, packageVariables, expectedMessage
