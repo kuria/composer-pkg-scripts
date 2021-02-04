@@ -60,5 +60,4 @@ class Plugin implements PluginInterface, Capable, EventSubscriberInterface
     function uninstall(Composer $composer, IOInterface $io)
     {
     }
-
 }
