@@ -52,4 +52,12 @@ class Plugin implements PluginInterface, Capable, EventSubscriberInterface
     {
         return $this->scriptManager;
     }
+
+    function deactivate(Composer $composer, IOInterface $io)
+    {
+    }
+
+    function uninstall(Composer $composer, IOInterface $io)
+    {
+    }
 }
